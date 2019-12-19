@@ -1,7 +1,6 @@
 package fr.diginamic.banque.entities;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -29,11 +28,6 @@ public class Client {
 	@Embedded
 	private Adresse adresse;
 	
-	@ManyToMany
-	@JoinTable(name="compo",
-	joinColumns=@JoinColumn(name="id_client", referencedColumnName="id"),
-	inverseJoinColumns=@JoinColumn(name="id_compte", referencedColumnName="id"))
-	private List<Compte> comptes;
 	
 	public Client(){}
 
@@ -121,17 +115,4 @@ public class Client {
 		this.adresse = adresse;
 	}
 
-	/** Getter
-	 * @return the comptes
-	 */
-	public List<Compte> getComptes() {
-		return comptes;
-	}
-
-	/** Setter
-	 * @param comptes the comptes to set
-	 */
-	public void setComptes(List<Compte> comptes) {
-		this.comptes = comptes;
-	}
 }
