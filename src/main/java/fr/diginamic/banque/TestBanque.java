@@ -11,7 +11,6 @@ public class TestBanque {
 		EntityManager em = emf.createEntityManager();
 		
 		em.close();
-		emf.close();
 
 	}
 

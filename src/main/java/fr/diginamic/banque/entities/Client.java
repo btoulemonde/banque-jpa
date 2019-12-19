@@ -19,11 +19,11 @@ public class Client {
 	@Column(name="prenom", length = 50 , nullable = false)
 	private String prenom;
 	
-	@Column (name="date_naissance")
+	@Column (name="date_naissance", nullable = false)
 	private LocalDateTime dateNaissance;
 	
 	@ManyToOne
-	@JoinColumn (name="id_banque")
+	@JoinColumn (name="id_banque", nullable = false)
 	private Banque banque;
 
 	@Embedded

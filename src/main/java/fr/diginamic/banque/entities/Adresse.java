@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Adresse {
 	
 	
-	@Column(name = "numero")
+	@Column(name = "numero", nullable = false)
 	private int numero;
 	
 	@Column(name = "rue", length = 50 , nullable = false)

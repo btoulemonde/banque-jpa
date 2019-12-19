@@ -12,7 +12,7 @@ public class Operation {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="date")
+	@Column(name="date", nullable = false)
 	private LocalDateTime date;
 	
 	@Column(name="montant", nullable = false)
@@ -22,7 +22,7 @@ public class Operation {
 	private String motif;
 	
 	@ManyToOne
-	@JoinColumn(name="id_compte")
+	@JoinColumn(name="id_compte", nullable = false)
 	private Compte compte;
 	
 	public Operation(){}
