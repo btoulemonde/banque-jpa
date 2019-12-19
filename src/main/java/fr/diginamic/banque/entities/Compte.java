@@ -1,5 +1,6 @@
 package fr.diginamic.banque.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -20,13 +21,13 @@ public class Compte {
 	private double solde;
 	
 	@OneToMany(mappedBy="compte")
-	private List<Operation> operations;
+	private List<Operation> operations = new ArrayList<Operation>();
 	
 	@ManyToMany
 	@JoinTable(name="compo",
 	joinColumns=@JoinColumn(name="id_compte", referencedColumnName="id"),
 	inverseJoinColumns=@JoinColumn(name="id_client", referencedColumnName="id"))
-	private List<Client> clients;
+	private List<Client> clients= new ArrayList<Client>();
 	
 	public Compte(){}
 

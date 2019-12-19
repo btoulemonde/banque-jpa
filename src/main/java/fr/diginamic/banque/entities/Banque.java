@@ -1,5 +1,6 @@
 package fr.diginamic.banque.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ public class Banque {
 	private String nom;
 	
 	@OneToMany(mappedBy="banque")
-	private List<Client> clients;
+	private List<Client> clients = new ArrayList<Client>();
 	
 	public Banque(){}
 

@@ -1,6 +1,6 @@
 package fr.diginamic.banque.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.*;
 
@@ -14,7 +14,7 @@ public class Operation {
 	private int id;
 	
 	@Column(name="date", nullable = false)
-	private LocalDateTime date;
+	private LocalDate date;
 	
 	@Column(name="montant", nullable = false)
 	private double montant;
@@ -45,15 +45,15 @@ public class Operation {
 	/** Getter
 	 * @return the date
 	 */
-	public LocalDateTime getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
 	/** Setter
-	 * @param date the date to set
+	 * @param localDate the date to set
 	 */
-	public void setDate(LocalDateTime date) {
-		this.date = date;
+	public void setDate(LocalDate localDate) {
+		this.date = localDate;
 	}
 
 	/** Getter

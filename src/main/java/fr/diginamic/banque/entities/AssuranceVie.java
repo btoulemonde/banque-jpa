@@ -2,6 +2,7 @@ package fr.diginamic.banque.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -9,7 +10,10 @@ import javax.persistence.Entity;
 @DiscriminatorValue("assurance_vie")
 public class AssuranceVie extends Compte {
 	
+	@Column(name="date_fin")
 	private LocalDate dateFin;
+	
+	@Column (name = "taux")
 	private double taux;
 	/** Getter
 	 * @return the dateFin

@@ -6,7 +6,9 @@ import javax.persistence.*;
 @DiscriminatorValue("livret_a")
 public class LivretA extends Compte {
 	
+	@Column(name = "taux")
 	private double taux;
+
 
 	/** Getter
 	 * @return the taux

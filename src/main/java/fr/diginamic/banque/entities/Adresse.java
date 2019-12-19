@@ -18,7 +18,7 @@ public class Adresse {
 	@Column(name = "ville", length = 50 , nullable = false)
 	private String ville;
 	
-
+	public Adresse(){}
 	/**
 	 * @param numero
 	 * @param rue

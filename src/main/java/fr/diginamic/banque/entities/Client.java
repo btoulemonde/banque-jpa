@@ -1,6 +1,7 @@
 package fr.diginamic.banque.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -19,11 +20,17 @@ public class Client {
 	private String prenom;
 	
 	@Column (name="date_naissance", nullable = false)
-	private LocalDateTime dateNaissance;
+	private LocalDate dateNaissance;
 	
 	@ManyToOne
-	@JoinColumn (name="id_banque", nullable = false)
+	@JoinColumn (name="id_banque")
 	private Banque banque;
+	
+	@ManyToMany
+	@JoinTable(name="compo",
+	joinColumns=@JoinColumn(name="id_client", referencedColumnName="id"),
+	inverseJoinColumns=@JoinColumn(name="id_compte", referencedColumnName="id"))
+	private List<Client> comptes;
 
 	@Embedded
 	private Adresse adresse;
@@ -76,14 +83,14 @@ public class Client {
 	/** Getter
 	 * @return the dateNaissance
 	 */
-	public LocalDateTime getDateNaissance() {
+	public LocalDate getDateNaissance() {
 		return dateNaissance;
 	}
 
 	/** Setter
 	 * @param dateNaissance the dateNaissance to set
 	 */
-	public void setDateNaissance(LocalDateTime dateNaissance) {
+	public void setDateNaissance(LocalDate dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
