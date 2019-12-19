@@ -5,7 +5,8 @@ import java.time.LocalDateTime;
 import javax.persistence.*;
 
 @Entity
-@Table(name="operation")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="type_operation")
 public class Operation {
 	
 	@Id

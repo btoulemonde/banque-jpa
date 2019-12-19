@@ -5,7 +5,8 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name="compte")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="type_comptes")
 public class Compte {
 	
 	@Id

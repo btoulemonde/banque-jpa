@@ -9,10 +9,14 @@
 		<class>banque.entities.Compte</class>
 		<class>banque.entities.Operation</class>
 		<properties>
+			<!-- desactiver l'autodetection des classes de type @Entity -->
+			<property name="hibernate.archive.autodetection" value="" />
+			<!-- Activation de la génération des tables manquantes uniquement -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<!-- Drop and create à chaque redémarrage -->
 			<property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
-
+			
 			<!-- Affichage des requêtes SQL -->
 			<property name="hibernate.show_sql" value="true" />
 			<!-- Paramètres d'accès à la BDD -->
