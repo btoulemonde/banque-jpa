@@ -16,9 +16,22 @@ public class Adresse {
 	private int codePostal;
 
 	@Column(name = "ville", length = 50 , nullable = false)
-	private String Villes;
+	private String ville;
 	
-	public Adresse (){}
+
+	/**
+	 * @param numero
+	 * @param rue
+	 * @param codePostal
+	 * @param villes
+	 */
+	public Adresse(int numero, String rue, int codePostal, String ville) {
+		super();
+		this.numero = numero;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+	}
 
 	/** Getter
 	 * @return the numero
@@ -63,17 +76,17 @@ public class Adresse {
 	}
 
 	/** Getter
-	 * @return the villes
+	 * @return the ville
 	 */
 	public String getVilles() {
-		return Villes;
+		return ville;
 	}
 
 	/** Setter
-	 * @param villes the villes to set
+	 * @param villes the ville to set
 	 */
-	public void setVilles(String villes) {
-		Villes = villes;
+	public void setVille(String ville) {
+		this.ville = ville;
 	}
 	
 }

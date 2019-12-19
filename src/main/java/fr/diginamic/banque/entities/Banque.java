@@ -12,6 +12,9 @@ public class Banque {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name="nom", length=255, nullable=true)
+	private String nom;
+	
 	@OneToMany(mappedBy="banque")
 	private List<Client> clients;
 	
@@ -43,6 +46,20 @@ public class Banque {
 	 */
 	public void setClients(List<Client> clients) {
 		this.clients = clients;
+	}
+
+	/** Getter
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/** Setter
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 
